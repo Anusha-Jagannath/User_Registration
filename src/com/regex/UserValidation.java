@@ -72,7 +72,7 @@ public class UserValidation {
 	 * @return true if password has minimum 8 characters else returns false
 	 */
 	public Boolean validatePassword(String password) {
-		String passwordMatcher = "^.{8,}";
+		String passwordMatcher = "^(?=.*[A-Z]).{8,}";
 		Boolean check = Pattern.matches(passwordMatcher, password);
 		return check;
 	}
