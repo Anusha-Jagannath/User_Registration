@@ -14,11 +14,33 @@ public class UserRegistration {
 		System.out.println("Enter first name");
 		Scanner scanner = new Scanner(System.in);
 		String firstName = scanner.nextLine();
-		Boolean check = validateFirstName(firstName);
-		if (check) {
+		System.out.println("Enter last name");
+		String lastName = scanner.nextLine();
+		Boolean firstNameCheck = validateFirstName(firstName);
+		if (firstNameCheck) {
 			System.out.println("Valid first name");
 		} else
 			System.out.println("Invalid first name");
+
+		Boolean lastNameCheck = validateLastname(lastName);
+		if (lastNameCheck) {
+			System.out.println("Valid last name");
+		} else
+			System.out.println("Invalid last name");
+	}
+
+	/*
+	 * method to validate last name of the user Last name starts with caps and has
+	 * minimum 3 characters
+	 * 
+	 * @param lastName of the user
+	 * 
+	 * @return true if last name is valid else returns false
+	 */
+	private static Boolean validateLastname(String lastName) {
+		String lastNameMatcher = "^[A-Z]{1}[a-z]{2,}$";
+		Boolean check = Pattern.matches(lastNameMatcher, lastName);
+		return check;
 	}
 
 	/*
