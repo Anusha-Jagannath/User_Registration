@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 public class UserValidation {
 
 	String firstNameMatcher = "^[A-Z]{1}[a-z]{2,}$";
-	String emailMatcher = "^[0-9a-zA-Z]+([.\\-_+][0-9a-zA-Z])*@[0-9a-zA-Z]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})*$";
+	String emailMatcher = "^[0-9a-zA-Z]+([.-_+][0-9a-zA-Z])*@[0-9a-zA-Z]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})*$";
 	String passwordMatcher = "^(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&]).{8,}";
 	String lastNameMatcher = "^[A-Z]{1}[a-z]{2,}$";
 	String mobileNoMatcher = "^[0-9]{2}\\s{0,1}[0-9]{10}$";
