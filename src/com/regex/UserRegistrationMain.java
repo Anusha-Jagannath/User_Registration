@@ -56,7 +56,7 @@ public class UserRegistrationMain {
 
 		Boolean passwordCheck = user.validatePassword(password);
 		if (passwordCheck) {
-			System.out.println("Valid passowrd");
+			System.out.println("Valid password");
 		} else
 			System.out.println("Invalid password");
 	}
