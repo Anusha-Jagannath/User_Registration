@@ -11,13 +11,20 @@ import java.util.regex.Pattern;
 public class UserRegistrationMain {
 
 	public static void main(String[] args) {
-		System.out.println("Welcome to user registration problem");
+
+		String emailId[] = { "abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com", "abc111@abc.com",
+				"abc-100@abc.net", "abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com", "abc",
+				"abc@.com.my", "abc123@gmail.a", "abc123@.com", "abc123@.com.com", ".abc@abc.com", "abc()*@gmail.com",
+				"abc@%*.com", "abc..2002@gmail.com", "abc..2002@gmail.com", "abc@abc@gmail.com", "abc@abc@gmail.com",
+				"abc@gmail.com.1a", "abc@gmail.com.aa.au" };
 		UserValidation user = new UserValidation();
+
+		System.out.println("Welcome to user registration problem");
 
 		System.out.println("Enter first name");
 		Scanner scanner = new Scanner(System.in);
-
 		String firstName = scanner.nextLine();
+		
 		System.out.println("Enter last name");
 		String lastName = scanner.nextLine();
 
@@ -56,8 +63,17 @@ public class UserRegistrationMain {
 
 		Boolean passwordCheck = user.validatePassword(password);
 		if (passwordCheck) {
-			System.out.println("Valid password");
+			System.out.println("Valid password\n");
 		} else
-			System.out.println("Invalid password");
+			System.out.println("Invalid password\n");
+
+		System.out.println("Validating all possible emails");
+		for (String string : emailId) {
+			Boolean emailAllCheck = user.validateEmail(string);
+			if (emailAllCheck) {
+				System.out.println("valid email");
+			} else
+				System.out.println("Invalid email");
+		}
 	}
 }
