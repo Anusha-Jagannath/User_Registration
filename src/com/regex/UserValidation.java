@@ -69,10 +69,11 @@ public class UserValidation {
 	 * 
 	 * @param password given as input by the user
 	 * 
-	 * @return true if password has minimum 8 characters else returns false
+	 * @return true if password has minimum 8 characters , at least one upper case, minimum 1 number
+	 * character else returns false
 	 */
 	public Boolean validatePassword(String password) {
-		String passwordMatcher = "^(?=.*[A-Z]).{8,}";
+		String passwordMatcher = "^(?=.*[A-Z])(?=.*\\d).{8,}";
 		Boolean check = Pattern.matches(passwordMatcher, password);
 		return check;
 	}
